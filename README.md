@@ -1,9 +1,14 @@
 # EXPERIMENT-NO--04-Distance measurement using Ultrasonic sensor
- ###  DATE: 
 
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT:
+
+ ###  DATE:  7/04/2024
+
+###  NAME: ALLUGURI SRI KRISHNA TEJA
+
+###  ROLL NO :  212222040006
+
+###  DEPARTMENT: COMPUTER SCIENCE AND ENGINEERING 
+
 ## AIM: 
 To interface an ultrasonic pair and measure the distance in centimeters , calculate the error
  
@@ -44,6 +49,20 @@ speed of sound in the air at 20ºC (68ºF) = 343m/s
 ![image](https://user-images.githubusercontent.com/36288975/166430594-5adb4ca9-5a42-4781-a7e6-7236b3766a85.png)
 
 
+### CIRCUIT DIAGRAM :
+
+<img width="614" alt="image" src="https://github.com/AlluguriSrikrishnateja/Experiment--04-Interfacing-digital-output-with-arduino-ultrasonic-sensor/assets/118343892/6789c92f-8d89-4fae-a3d8-2ec2d51dd6cf">
+
+
+
+### SCHEMATIC REPRESENTATION : 
+
+
+<img width="582" alt="image" src="https://github.com/AlluguriSrikrishnateja/Experiment--04-Interfacing-digital-output-with-arduino-ultrasonic-sensor/assets/118343892/dcb02512-453d-445a-a9f1-dc80ec0f7f4b">
+
+
+
+
 
 ### PROCEDURE:
 1.	Connect the circuit as per the circuit diagram 
@@ -61,6 +80,51 @@ speed of sound in the air at 20ºC (68ºF) = 343m/s
 ### PROGRAM 
 ```
 
+const int trigPin=10;
+const int echoPin=9;
+int red=7;
+int green=6;
+long duration;
+float distance;
+
+void setup()
+{
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  pinMode(red, OUTPUT);
+  pinMode(green, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  digitalWrite(trigPin, LOW);
+  delay(20); 
+  digitalWrite(trigPin, HIGH);
+  delay(20); 
+  digitalWrite(trigPin, LOW);
+  duration=pulseIn(echoPin,HIGH);
+  distance=duration*0.034/2;
+  Serial.print(distance);
+  Serial.println("cms");
+  if(distance > 5)
+  {
+    digitalWrite(red, HIGH);
+    delay(200);
+    digitalWrite(red, LOW);
+    delay(200);
+  }
+  else
+  {
+    digitalWrite(green, HIGH);
+    delay(200);
+    digitalWrite(green, LOW);
+    delay(200);
+  }
+}
+
+
+
 
 
 
@@ -73,15 +137,15 @@ speed of sound in the air at 20ºC (68ºF) = 343m/s
 `````````
 
 
-### Distance vs measurement table 
+### Distance vs measurement table :
 
-			
- 
-			
-			
-			
 
-![image](https://user-images.githubusercontent.com/36288975/190135379-52ebacd5-ccd5-460f-a4cd-4d0ad1d9b179.png)
+<img width="458" alt="image" src="https://github.com/AlluguriSrikrishnateja/Experiment--04-Interfacing-digital-output-with-arduino-ultrasonic-sensor/assets/118343892/5c7a0d4e-ef97-42dd-a23e-2922d15147f1">
+
+
+
+<img width="608" alt="image" src="https://github.com/AlluguriSrikrishnateja/Experiment--04-Interfacing-digital-output-with-arduino-ultrasonic-sensor/assets/118343892/3aa89942-e7d4-4dd9-bd93-3a3c7009e5c7">
+
 
 			
 			
@@ -98,7 +162,9 @@ speed of sound in the air at 20ºC (68ºF) = 343m/s
 
 
 
-### RESULTS
+### RESULTS :
+
+Thus we got the output To interface an ultrasonic pair and measure the distance in centimeters , calculate the error
 
 
 
