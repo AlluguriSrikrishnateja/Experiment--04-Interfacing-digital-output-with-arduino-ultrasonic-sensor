@@ -1,7 +1,7 @@
 # EXPERIMENT-NO--04-Distance measurement using Ultrasonic sensor
 
 
- ###  DATE:  7/04/2024
+ ###  DATE:  7/03/2024
 
 ###  NAME: ALLUGURI SRI KRISHNA TEJA
 
